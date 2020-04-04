@@ -1,0 +1,31 @@
+.allbox{
+	width:auto;
+	margin-top:40px;
+	text-align:center;
+	height:435px
+	
+}
+.float{
+	float:left;
+	width: 230px;
+}
+.float2{
+	display: block;
+	float: left;
+	margin-right:15px;
+	width:180px;
+	text-align:right;
+	line-height: 34.4px;
+}
+.display-table{
+	display:table;
+	margin:15px 5px;
+}
+.from-width{
+	width:500px;
+	margin:20px auto;
+}
+b{
+	font-size: large;
+	color: #f00;
+}

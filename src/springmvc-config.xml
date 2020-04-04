@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-4.3.xsd 
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+   	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+<!--	https://blog.csdn.net/wu9333/article/details/70859860加载了静态页面后contreller失效问题解决方案-->
+<!--	default-servlet-handler将在SpringMVC上下文中定义一个DefaultServletHttpRequestHandler,
+		它会对进入DispatcherServlet的请求进行筛查。
+		如果发现是没有经过映射的请求，就将该请求交由WEB应用服务器默认的Servlet进行处理。如果不是静态资源的请求，
+		才由DispatcherServlet继续进行处理。-->
+
+	<!--默认的注解映射,同时使用jackson来解析json,若需要使用fastjson则需要自行配置fastjson的bean -->
+	<mvc:annotation-driven/>
+	<!--  解除servlet对静态资源文件访问的限制，使得静态资源先经过-->
+	<mvc:default-servlet-handler/>
+	<!--配置用户定义的Contreller的实例 -->
+	<context:component-scan base-package="com.spirngmvc.controller"/>
+	<!-- 配置视图解析器 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- 指定前缀 -->
+		<property name="prefix" value="/resources/"/>
+		<!-- 指定后缀 -->
+		<property name="suffix" value=".jsp"/>
+	</bean>
+
+	<!-- 注入fastjson配置类 -->
+	<bean name="fastJsonConfig" class="com.alibaba.fastjson.support.config.FastJsonConfig">
+		<property name="serializerFeatures">
+			<list>
+				<value>WriteMapNullValue</value>
+				<value>WriteMapNullValue</value>
+				<value>WriteNullNumberAsZero</value>
+				<value>WriteNullListAsEmpty</value>
+				<value>WriteNullStringAsEmpty</value>
+				<value>WriteNullBooleanAsFalse</value>
+				<value>WriteDateUseDateFormat</value>
+			</list>
+		</property>
+	</bean>
+
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<!-- 这里配置alibaba 的fastjson -->
+			<bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>text/html;charset=UTF-8</value>
+						<value>application/json;charset=UTF-8</value>
+					</list>
+				</property>
+				<!-- 配置 -->
+				<property name="fastJsonConfig" ref="fastJsonConfig">
+
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+</beans>

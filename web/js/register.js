@@ -1,14 +1,14 @@
 $(function () {
     $('#sub_register').bind('click', function () {
-        let $user = $('#user').val();
-        let $pass = $('#pass1').val();
-        let $pass2 = $('#pass2').val();
-        let $num = $('#num').val();
-        let $nickname = $('#nickname').val();
-        let $address = $('#address').val();
-        let $mail = $('#mail').val();
-        let regex = /^(13[0-9]|14[0-9]|15[0-9]|166|17[0-9]|18[0-9]|19[8|9])\d{8}$/;
-        if ($user != "" || $pass != "" || $pass2 != "" || $num != "" ) {
+        var $user = $('#user').val();
+        var $pass = $('#pass1').val();
+        var $pass2 = $('#pass2').val();
+        var $num = $('#num').val();
+        var $nickname = $('#nickname').val();
+        var $address = $('#address').val();
+        var $mail = $('#mail').val();
+        var regex = /^(13[0-9]|14[0-9]|15[0-9]|166|17[0-9]|18[0-9]|19[8|9])\d{8}$/;
+        if ($user != "" && $pass != "" && $pass2 != "" && $num != "" ) {
             if ($pass != $pass2) {
                 layer.alert("两次密码不一致");
             } else if (!(regex.test($num))) {

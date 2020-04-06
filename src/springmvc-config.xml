@@ -29,6 +29,7 @@
 	<mvc:resources location="/js/" mapping="/js/**"/>
 	<mvc:resources location="/images/" mapping="/images/**"/>
 	<mvc:resources location="/css/" mapping="/css/**"/>
+	<mvc:resources location="/fonts/" mapping="fonts/**"/>
 	<!-- 第二种：  解除servlet对静态资源文件访问的限制，使得静态资源先经过-->
 <!--	<mvc:default-servlet-handler/>-->
 	<!--配置用户定义的Contreller的实例 -->

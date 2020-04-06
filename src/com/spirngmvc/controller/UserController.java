@@ -70,4 +70,22 @@ public class UserController {
 		}
 		return resultMap;
 	}
+	//请求映射ajax中的loginAjax方法
+	@RequestMapping("loginAjax")
+	@ResponseBody
+	public Map<String,String> ajaxLogin(String username,String password,HttpServletRequest request, HttpServletResponse response){
+		Map<String,String> resultMap = new HashMap<String, String>();
+		if(userService.dologin(username, password)) {
+			HttpSession session =request.getSession();
+			Map<String,String> userIF=new HashMap<String, String>();
+			userIF.put("username",username);
+			session.setAttribute("userIF", userIF);
+			session.setAttribute("username", username);
+			System.out.println("登录成功");
+			resultMap.put("result","1");
+		}else {
+			resultMap.put("result","0");
+		}
+		return resultMap;
+	}
 }

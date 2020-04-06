@@ -9,12 +9,36 @@
 <html>
 <head>
     <title>登录界面</title>
+    <link rel="stylesheet" href="/SpringMVCTest/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/SpringMVCTest/css/login.css">
+    <script src="/SpringMVCTest/js/jquery-3.4.1.js"></script>
+    <script src="/SpringMVCTest/js/layer.js"></script>
+    <script src="/SpringMVCTest/js/bootstrap.min.js"></script>
+    <script src="/SpringMVCTest/js/login.js"></script>
 </head>
 <body>
-    <form action="login" method="post">
-        <span>用户名：</span><input type="text" name="loginId"/><br>
-        <span>密码：</span><input type="password" name="loginPwd"/><br>
-        <input type="submit" value="登录"/>
-    </form>
+    <div class="login-newbg">
+        <div class="login-newbg">
+            <div class="loginbox">
+                <div class="login-title">
+                    密码登录
+                </div>
+                <div class="input-group ">
+                    <span class="input-group-addon"><img class="img-rounded" src="/SpringMVCTest/images/user.png" width="16px"></span>
+                    <input type="text" id="username" class="form-control" placeholder="请输入账户/手机号">
+                </div>
+                <div class="input-group ">
+                    <span class="input-group-addon"><img class="img-rounded" src="/SpringMVCTest/images/pass.png" width="16px"></span>
+                    <input type="password" id='password' class="form-control " placeholder="请输入密码">
+                </div>
+                <button type="button" id='sumbit' class="btn btn-primary btn-lg center-block " style="text-shadow: black 5px 3px 3px;">
+                    登录
+                </button>
+                <div class="right-a">
+                    <a href="/SpringMVCTest/resources/register.jsp" >免费注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

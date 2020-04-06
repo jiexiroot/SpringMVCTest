@@ -7,7 +7,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>注册界面</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/register.css">
     <script src="../js/jquery-3.4.1.js"></script>
@@ -27,12 +27,12 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span>
                     注册</a></li>
-                <li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span>
+                <li><a href="/SpringMVCTest"><span class="glyphicon glyphicon-log-in"></span>
                     登录</a></li>
             </ul>
         </div>
     </nav>
-    <form class="from-width" role="form" method="post" action="register">
+    <form class="from-width" role="form" method="post">
         <div class="display-table">
             <label for="user" class="float2 control-label"><b>*</b>用户名</label>
             <div class="float">

@@ -82,7 +82,6 @@ public class UserController {
 			session.setAttribute("userIF", userIF);
 			session.setAttribute("username", username);
 			System.out.println("登录成功");
-			System.out.println(userService.dologin(username, password));
 			resultMap.put("result","1");
 		}else {
 			resultMap.put("result","0");

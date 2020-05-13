@@ -1,8 +1,10 @@
-package com.spirngmvc.controller;
+package com.springmvc.controller;
 
 
-import com.spirngmvc.pojo.User;
-import com.spirngmvc.service.UserService;
+import com.springmvc.mapper.CategoriesMapper;
+import com.springmvc.pojo.Categories;
+import com.springmvc.pojo.User;
+import com.springmvc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,9 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -25,9 +26,10 @@ import java.util.Map;
  *
  */
 @Controller
-public class UserController {
+public class UserController2 {
 	@Autowired
 	UserService userService;
+
 
 	public void setUserService(UserService userService) {
 		this.userService = userService;
@@ -47,10 +49,18 @@ public class UserController {
 	@RequestMapping("/resources/register")
 	public String doRegister(User user, HttpServletRequest request, HttpServletResponse response){
 		//当用户没输入值时赋值为空字符串
-		if(user.getName()==null) user.setName("");
-		if(user.getAddress()==null) user.setAddress("");
-		if(user.getPhone()==null) user.setPhone("");
-		if(user.getMail()==null) user.setMail("");
+		if(user.getName()==null) {
+			user.setName("");
+		}
+		if(user.getAddress()==null) {
+			user.setAddress("");
+		}
+		if(user.getPhone()==null) {
+			user.setPhone("");
+		}
+		if(user.getMail()==null) {
+			user.setMail("");
+		}
 		if (userService.doregister(user.getLoginId(),user.getLoginPwd(),user.getName(),user.getAddress(),user.getPhone(),user.getMail())){
 			return "login";
 		}else{
@@ -88,4 +98,5 @@ public class UserController {
 		}
 		return resultMap;
 	}
+
 }

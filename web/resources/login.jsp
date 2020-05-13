@@ -9,12 +9,12 @@
 <html>
 <head>
     <title>登录界面</title>
-    <link rel="stylesheet" href="/SpringMVCTest/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/SpringMVCTest/css/login.css">
-    <script src="/SpringMVCTest/js/jquery-3.4.1.js"></script>
-    <script src="/SpringMVCTest/js/layer.js"></script>
-    <script src="/SpringMVCTest/js/bootstrap.min.js"></script>
-    <script src="/SpringMVCTest/js/login.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css">
+    <script src="${pageContext.request.contextPath}/js/jquery-3.4.1.js"></script>
+    <script src="${pageContext.request.contextPath}/js/layer.js"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/login.js"></script>
 </head>
 <body>
     <div class="login-newbg">

@@ -11,8 +11,7 @@ $(function(){
                 async:false,
                 data:{'username':$user.val(),'password':$pass.val()},
                 success:function(data){
-                    var json = $.parseJSON(data);
-                    if(json.result=='0'){
+                    if(data.result=='0'){
                         layer.msg('密码或账户名错误');
                         $user.parent().addClass('has-error');
                         $pass.parent().addClass('has-error');

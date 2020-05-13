@@ -1,4 +1,4 @@
-package com.spirngmvc.dao;
+package com.springmvc.dao;
 
 public interface UserDao {
 	/**

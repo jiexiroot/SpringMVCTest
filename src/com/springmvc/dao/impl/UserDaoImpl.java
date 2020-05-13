@@ -1,11 +1,11 @@
-package com.spirngmvc.dao.impl;
+package com.springmvc.dao.impl;
 
 import java.sql.Types;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.spirngmvc.dao.UserDao;
+import com.springmvc.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -13,7 +13,7 @@ import org.springframework.jdbc.core.SqlOutParameter;
 import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
-import com.spirngmvc.pojo.User;
+import com.springmvc.pojo.User;
 
 /**
  * UserDaoImpl实现UserDao接口

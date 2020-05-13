@@ -5,15 +5,17 @@
   Time: 9:31
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="path" scope="session" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
     <title>注册界面</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/register.css">
-    <script src="../js/jquery-3.4.1.js"></script>
-    <script src="../js/layer.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/register.js"></script>
+    <link rel="stylesheet" href="${path}/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${path}/css/register.css">
+    <script src="${path}/js/jquery-3.4.1.js"></script>
+    <script src="${path}/js/layer.js"></script>
+    <script src="${path}/js/bootstrap.min.js"></script>
+    <script src="${path}/js/register.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-default" role="navigation">

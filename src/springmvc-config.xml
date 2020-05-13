@@ -33,8 +33,9 @@
 	<!-- 第二种：  解除servlet对静态资源文件访问的限制，使得静态资源先经过-->
 <!--	<mvc:default-servlet-handler/>-->
 	<!--配置用户定义的Contreller的实例 -->
-	<context:component-scan base-package="com.spirngmvc.controller"/>
+	<context:component-scan base-package="com.springmvc.controller"/>
 	<!-- 配置视图解析器 -->
+
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<!-- 指定前缀 -->
 		<property name="prefix" value="/resources/"/>
@@ -74,4 +75,22 @@
 			</bean>
 		</mvc:message-converters>
 	</mvc:annotation-driven>
+	<!--  显示的装配自定义类型转换器  -->
+	<mvc:annotation-driven conversion-service="conversionService"/>
+	<!--  自定义类型转换器配置  -->
+<!--	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">-->
+<!--		<property name="converters">-->
+<!--			<set>-->
+<!--				<bean class="com.springmvc.convert.DateConverter"/>-->
+<!--			</set>-->
+<!--		</property>-->
+<!--	</bean>-->
+	<!--  自定义类型格式化转换器配置  -->
+	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="formatters">
+			<set>
+				<bean class="com.springmvc.convert.DateFormatter"/>
+			</set>
+		</property>
+	</bean>
 </beans>

@@ -1,10 +1,13 @@
-package com.spirngmvc.pojo;
+package com.springmvc.pojo;
+
+import java.io.Serializable;
+
 /**
  * POJO类，和数据库中表的字段一致（类型，名称首字母小写，采用小驼峰的形式）
  * @author GOU
  *
  */
-public class User {
+public class User implements Serializable {
 	private int id;
 	private String loginId;
 	private String loginPwd;

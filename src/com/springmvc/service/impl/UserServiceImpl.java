@@ -1,15 +1,20 @@
-package com.spirngmvc.service.impl;
+package com.springmvc.service.impl;
 
-import com.spirngmvc.dao.UserDao;
+import com.springmvc.dao.UserDao;
+import com.springmvc.mapper.CategoriesMapper;
+import com.springmvc.pojo.Categories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.spirngmvc.service.UserService;
+import com.springmvc.service.UserService;
+
+import java.util.List;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
 	@Autowired
 	UserDao userDao;
+	CategoriesMapper categoriesMapper;
 
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;

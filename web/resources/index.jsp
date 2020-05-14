@@ -20,5 +20,6 @@
   <jsp:include page="head.jsp"/>
   <h1>登陆成功,欢迎您${username}</h1>
   <div id="cList"></div>
+  <jsp:include page="footer.jsp"/>
   </body>
 </html>

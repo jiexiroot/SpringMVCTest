@@ -20,7 +20,7 @@ public class MyAspect2 {
 	/**
 	 * 定义切入点
 	 */
-	@Pointcut("execution(* com.springmvc.mapper.*.* (..))")
+	@Pointcut("execution(* com.springmvc.service.impl.*.* (..))")
 	private void myPointCut() {}
 	/**
 	 * 模拟权限检查的方法

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: GOU
@@ -18,8 +19,11 @@
   </head>
   <body>
   <jsp:include page="head.jsp"/>
-  <h1>登陆成功,欢迎您${username}</h1>
-  <div id="cList"></div>
+  <h3>登陆成功,欢迎您${username}</h3>
+  <div>
+      <div id="cList"></div>
+      <div id="cInfo"></div>
+  </div>
   <jsp:include page="footer.jsp"/>
   </body>
 </html>

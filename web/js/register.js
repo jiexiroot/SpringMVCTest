@@ -20,8 +20,6 @@ $(function () {
                     async:false,
                     data:{chooseID:'1','username':$user,'password':$pass,'telphone':$num,'address':$address,'nickname':$nickname,'mail':$mail},
                     success:function(data){
-                        console.log(data);
-                        alert(data);
                         if(data.result=='1'){
                             layer.msg('注册成功');
                             window.location.href="login.jsp"

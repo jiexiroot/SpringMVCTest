@@ -14,6 +14,8 @@
     <script src="${path}/js/jquery-3.4.1.js"></script>
     <script src="${path}/js/layer.js"></script>
     <script src="${path}/js/bootstrap.min.js"></script>
+    <script src="${path}/js/book_info.js"></script>
+
     <style>
         table,th{
             text-align:center
@@ -22,41 +24,48 @@
     <title>图书信息</title>
 </head>
 <body>
-    <jsp:include page="head.jsp"/>
+<%--    <jsp:include page="head.jsp"/>--%>
 
     <div class="panel panel-primary">
         <div class="panel-heading">
             <div class="panel-title" style="height: 35px">
                 <p class="pull-left">以下是种类为：${info_book.Cname}</p>
-                <button type="button" onclick="location='${path}/resources/index.jsp'" class="pull-right btn btn-default">返回主界面</button>
+<%--                <button type="button" onclick="location='${path}/resources/index.jsp'" class="pull-right btn btn-default">返回主界面</button>--%>
             </div>
 
         </div>
         <div class="panel-body">
-            <table class="table table-hover">
+            <table id="table" class="table table-hover">
                 <thead>
-                    <tr>
+                    <tr id="">
+                        <th>选择</th>
                         <th>ISBN</th>
                         <th>书名</th>
                         <th>作者</th>
                         <th>单价</th>
+                        <th>操作</th>
                     </tr>
                 </thead>
                 <tbody>
                     <c:choose>
                         <c:when test="${not empty info_book.bookList}">
+                            <td>
+                                <button class="btn btn-danger" id="delChoose">批量删除</button>
+                            </td>
                             <c:forEach items="${info_book.bookList}" var="books">
                                 <tr>
+                                    <td><input name="ids" value="${books.id}" type="checkbox"></td>
                                     <td>${books.iSBN}</td>
                                     <td>${books.title}</td>
                                     <td>${books.author}</td>
                                     <td>${books.unitPrice}</td>
+                                    <td><button class="btn btn-danger" id="delThis" onclick="delThis(this,'${books.id}')">删除</button></td>
                                 </tr>
                             </c:forEach>
                         </c:when>
                         <c:otherwise>
                             <tr>
-                                <td colspan="4"><h2>没有该种类的图书信息</h2></td>
+                                <td colspan="6"><h2>没有该种类的图书信息</h2></td>
                             </tr>
                         </c:otherwise>
                     </c:choose>
@@ -66,6 +75,6 @@
             </table>
         </div>
     </div>
-    <jsp:include page="footer.jsp"/>
+<%--    <jsp:include page="footer.jsp"/>--%>
 </body>
 </html>

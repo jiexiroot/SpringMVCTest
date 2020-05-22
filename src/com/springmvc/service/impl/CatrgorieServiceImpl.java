@@ -21,4 +21,9 @@ public class CatrgorieServiceImpl implements CategorieService {
     public List<Categories> findCategories(){
         return categoriesMapper.findCategories();
     }
+
+    @Override
+    public Categories selectCidByBookId(int bookId) {
+        return categoriesMapper.selectCidByBookId(bookId);
+    }
 }

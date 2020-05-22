@@ -43,7 +43,7 @@
             </div>
             <li><a href="Me.jsp"><span class="glyphicon glyphicon-user"></span>
                 我的信息</a></li>
-            <li><a id='exit' href="/SpringMVCTest"><span class="glyphicon glyphicon-log-in"></span>
+            <li><a id='exit' href="${pageContext.request.contextPath}/resources/login.jsp"><span class="glyphicon glyphicon-log-in"></span>
                 退出登录</a></li>
 
             <% } %>

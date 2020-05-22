@@ -30,10 +30,21 @@ public class User implements Serializable {
 		this.userRoleId = userRoleId;
 		this.userStateId = userStateId;
 	}
+	public User(String loginId, String loginPwd, String name, String address, String phone, String mail) {
+		this.loginId = loginId;
+		this.loginPwd = loginPwd;
+		this.name = name;
+		this.address = address;
+		this.phone = phone;
+		this.mail = mail;
+	}
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+
+
 	public int getId() {
 		return id;
 	}

@@ -5,6 +5,7 @@ import com.springmvc.mapper.CategoriesMapper;
 import com.springmvc.pojo.Categories;
 import com.springmvc.pojo.User;
 import com.springmvc.service.UserService;
+import com.springmvc.service.UserService2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,7 +30,8 @@ import java.util.Map;
 public class UserController2 {
 	@Autowired
 	UserService userService;
-
+	@Autowired
+	UserService2 userService2;
 
 	public void setUserService(UserService userService) {
 		this.userService = userService;
@@ -72,7 +74,7 @@ public class UserController2 {
 	@ResponseBody
 	public Map<String,String> ajaxRegister(String chooesID,String username,String password,String telphone,String address,String nickname,String mail){
 		Map<String,String> resultMap = new HashMap<String, String>();
-		if(userService.doregister(username, password, nickname, address, telphone,mail)){
+		if(userService2.doRegister(username, password, nickname, address, telphone,mail)){
 			System.out.println("注册成功");
 			resultMap.put("result","1");
 		}else{
@@ -83,9 +85,11 @@ public class UserController2 {
 	//请求映射ajax中的loginAjax方法
 	@RequestMapping("loginAjax")
 	@ResponseBody
-	public Map<String,String> ajaxLogin(String username,String password,HttpServletRequest request, HttpServletResponse response){
+	public Map<String,String> ajaxLogin(User user,HttpServletRequest request, HttpServletResponse response){
 		Map<String,String> resultMap = new HashMap<String, String>();
-		if(userService.dologin(username, password)) {
+		String username=user.getLoginId();
+		String password=user.getLoginPwd();
+		if(userService2.doLogin(username, password)) {
 			HttpSession session =request.getSession();
 			Map<String,String> userIF=new HashMap<String, String>();
 			userIF.put("username",username);

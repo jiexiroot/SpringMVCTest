@@ -1,3 +1,12 @@
+h3{
+    text-align: center;
+}
 #cList{
     margin-left: 20px;
+    width: 20%;
+    float: left;
+}
+#cInfo{
+    float: left;
+    width: 75%;
 }

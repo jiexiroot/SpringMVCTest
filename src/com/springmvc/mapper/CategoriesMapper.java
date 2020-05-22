@@ -1,6 +1,7 @@
 package com.springmvc.mapper;
 
 import com.springmvc.pojo.Categories;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -17,4 +18,12 @@ public interface CategoriesMapper {
      */
     @Select("select * from categories")
     List<Categories> findCategories();
+
+    /**
+     * 通过bookId得到对应的Cid
+     * @param bookId
+     * @return Cid
+     */
+    @Select("select c.Id,c.Name from categories as c where c.id=(select CategoryId from books where books.id=#{bid})")
+    Categories selectCidByBookId(@Param("bid")int bookId);
 }

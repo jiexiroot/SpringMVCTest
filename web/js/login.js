@@ -9,7 +9,7 @@ $(function(){
                 url:"/SpringMVCTest/loginAjax",
                 type:"post",
                 async:false,
-                data:{'username':$user.val(),'password':$pass.val()},
+                data:{'LoginId':$user.val(),'LoginPwd':$pass.val()},
                 success:function(data){
                     if(data.result=='0'){
                         layer.msg('密码或账户名错误');

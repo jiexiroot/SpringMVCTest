@@ -14,7 +14,6 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 	@Autowired
 	UserDao userDao;
-	CategoriesMapper categoriesMapper;
 
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;

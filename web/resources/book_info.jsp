@@ -42,7 +42,7 @@
                         <th>ISBN</th>
                         <th>书名</th>
                         <th>作者</th>
-                        <th>单价</th>
+                        <th width="5.2%">单价</th>
                         <th>操作</th>
                     </tr>
                 </thead>

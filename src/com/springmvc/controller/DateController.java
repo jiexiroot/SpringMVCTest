@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * 日期控制器类
  */
 @Controller
-public class DateController {
+public class
+DateController {
 	/**
 	 * 使用自定义类型数据绑定日期数据
 	 */

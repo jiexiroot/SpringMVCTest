@@ -14,7 +14,7 @@ $(function(){
                 <a href="/SpringMVCTest/cid/${data.slc[i].id}/name/${data.slc[i].name}" target="bookInfo_min">${data.slc[i].name}</a></li>`)
                }
             }else{
-                $('#cList').append("<h2>error:0</h2><h3><small>没有找到图书的种类id</small></h3>")
+                $('#cList').append("<h2>error:0</h2><h3><small>没有找到图书的种类id或者未登录</small></h3>")
             }
 
         }

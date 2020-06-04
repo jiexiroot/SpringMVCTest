@@ -93,4 +93,14 @@
 			</set>
 		</property>
 	</bean>
+	<mvc:interceptors>
+		<bean class="com.springmvc.interceptor.AllInterceptor"/>
+		<mvc:interceptor>
+			<mvc:mapping path="/selectfromC"/>
+			<mvc:mapping path="/toIndex"/>
+<!--			解除封禁-->
+<!--			<mvc:exclude-mapping path="/resources"/>-->
+			<bean class="com.springmvc.interceptor.LoginInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
 </beans>

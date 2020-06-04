@@ -9,6 +9,7 @@ import com.springmvc.service.UserService2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +33,40 @@ public class UserController2 {
 	UserService userService;
 	@Autowired
 	UserService2 userService2;
+
+
+	/**
+	 * 跳转登陆
+	 * @return
+	 */
+	@RequestMapping(value = "/toLogin",method = RequestMethod.GET)
+	public String ToLogin(){
+		return "login";
+	}
+
+	/**
+	 * 跳转主页
+	 * @return
+	 */
+	@RequestMapping(value = "/toIndex",method = RequestMethod.GET)
+	public String ToIndex(){
+		return "index";
+	}
+
+	/**
+	 * 退出登陆
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping(value = "/logout",method = RequestMethod.POST)
+	@ResponseBody
+	public Map<String,String> Logout(HttpSession session){
+		Map<String,String> resultMap = new HashMap<String, String>();
+		resultMap.put("resultId","1");
+		//清空session
+		session.invalidate();
+		return resultMap;
+	}
 
 	public void setUserService(UserService userService) {
 		this.userService = userService;

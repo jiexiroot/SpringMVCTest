@@ -18,7 +18,7 @@ $(function(){
                         $pass.val("");
                     }else{
                         layer.msg('登录成功');
-                        window.location.href="/SpringMVCTest/resources/index.jsp"
+                        window.location.href="/SpringMVCTest/toIndex"
                     }
 
                 }
